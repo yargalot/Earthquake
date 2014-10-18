@@ -1,0 +1,19 @@
+{
+  "name": "anz-test",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yargalot/anz-test",
+  "authors": [
+    "Steven John Miller <steven.jmiller@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}

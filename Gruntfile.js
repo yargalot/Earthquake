@@ -3,16 +3,22 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+
+    // Start the express server
     develop: {
       server: {
         file: 'bin/www',
         nodeArgs: ['--debug'],            // optional
-        args: ['appArg1', 'appArg2'],     // optional
-        env: {
-          NODE_ENV: 'development'         // optional
-        }
+        // args: ['appArg1', 'appArg2'],     // optional
+        // env: {
+        //   NODE_ENV: 'development'         // optional
+        // }
       }
     },
+
+
+    // Less file compilation
     less: {
       development: {
         options: {
@@ -24,6 +30,8 @@ module.exports = function(grunt) {
       }
     },
 
+
+    // Start the watch process
     watch: {
       scripts: {
         files: 'source/less/**/*.less',
