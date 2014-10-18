@@ -6,6 +6,8 @@ function DashboardMainController($scope, $http, $interval) {
 
     console.log(data);
 
+    $scope.earthquakes = data.earthquakes;
+
   });
 
 }
