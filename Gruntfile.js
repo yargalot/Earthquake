@@ -22,7 +22,7 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ["assets/css"]
+          paths: ["bower_components/bootstrap/less"]
         },
         files: {
           "public/stylesheets/style.css": "source/less/style.less"
@@ -31,15 +31,33 @@ module.exports = function(grunt) {
     },
 
 
+    // Open the browser
+    open : {
+      dev : {
+        path: 'http://localhost:3000',
+        app: 'Google Chrome'
+      }
+    },
+
+
     // Start the watch process
     watch: {
-      scripts: {
-        files: 'source/less/**/*.less',
-        tasks: ['less:development'],
+      options: {
+        livereload: 3117,
+      },
+      less: {
         options: {
           interrupt: true,
         },
+        files: 'source/less/**/*.less',
+        tasks: ['less:development']
       },
+      jade: {
+        files: 'views/**/*.jade'
+      },
+      gruntfile: {
+        files: 'Gruntfile.js'
+      }
     }
   });
 
@@ -47,6 +65,6 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default task(s).
-  grunt.registerTask('default', ['less', 'develop', 'watch']);
+  grunt.registerTask('default', ['less', 'develop', 'open', 'watch']);
 
 };
