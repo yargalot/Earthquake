@@ -31,6 +31,12 @@ module.exports = function(grunt) {
     },
 
 
+    // JsHint
+    jshint: {
+      all: ['Gruntfile.js', 'public/**/*.js']
+    },
+
+
     // Open the browser
     open : {
       dev : {
@@ -54,6 +60,13 @@ module.exports = function(grunt) {
       },
       jade: {
         files: 'views/**/*.jade'
+      },
+      scripts: {
+        files: ['public/js/**/*.js'],
+        tasks: ['jshint']
+      },
+      express: {
+        files: ['app.js', 'routes/**/*.js']
       },
       gruntfile: {
         files: 'Gruntfile.js'
