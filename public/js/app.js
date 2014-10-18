@@ -7,7 +7,19 @@ angular.module('Earthquake', [
   $routeProvider
   .when('/', {
     templateUrl: '/dashboard',
-    controller: DashboardMainController
+    controller: DashboardMainController,
+    resolve: {
+      earthquakes: function($http) {
+        return $http.get('/api').then(
+          function success(response) {
+            return response.data.earthquakes;
+          },
+          function error(reason) {
+            return false;
+          }
+        );
+      }
+    }
   })
   .otherwise({
     redirectTo: '/'

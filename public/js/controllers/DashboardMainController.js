@@ -1,13 +1,9 @@
-DashboardMainController.$inject = ['$scope', '$http', '$interval'];
+DashboardMainController.$inject = ['$scope', '$http', '$interval', 'earthquakes'];
 
-function DashboardMainController($scope, $http, $interval) {
+function DashboardMainController($scope, $http, $interval, earthquakes) {
 
-  $http.get('/api').success(function(data) {
+  console.log(earthquakes);
 
-    console.log(data);
-
-    $scope.earthquakes = data.earthquakes;
-
-  });
+  $scope.earthquakes = earthquakes;
 
 }
