@@ -1,6 +1,8 @@
 h1 Dashboard
 
 ul
-  li(ng-repeat='earthquake in earthquakes') {{earthquake.region}}
+  li(ng-repeat='earthquake in earthquakes')
+    strong {{earthquake.region}}
+    | &nbsp;{{earthquake.timedate}}
 
-{{earthquakes}}
+//- {{earthquakes}}
