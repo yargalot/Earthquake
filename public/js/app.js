@@ -1,10 +1,13 @@
 // Declare app level module which depends on filters, and services
 angular.module('Earthquake', [
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate'
 ])
 .config(['$routeProvider', function($routeProvider) {
 
   $routeProvider
+
+  // Dashboard
   .when('/', {
     templateUrl: '/dashboard',
     controller: DashboardMainController,
@@ -21,6 +24,8 @@ angular.module('Earthquake', [
       }
     }
   })
+
+  // Otherwise redirect to
   .otherwise({
     redirectTo: '/'
   });
