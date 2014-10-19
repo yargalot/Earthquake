@@ -2,8 +2,6 @@ SearchController.$inject = ['$scope', '$http', '$interval', '$routeParams', 'ear
 
 function SearchController($scope, $http, $interval, $routeParams, earthquakes, resolutionService) {
 
-  console.log($routeParams.year);
-
   $scope.resolutionGrid = resolutionService.largeResolution ? 3 : 2;
   $scope.earthquakeYear = $routeParams.year;
   $scope.earthquakeMonth = $routeParams.month;
@@ -17,7 +15,6 @@ function SearchController($scope, $http, $interval, $routeParams, earthquakes, r
 
   $http.get('/api/totals').then(
     function success(response) {
-      console.log(response);
 
       $scope.totals = response.data;
 

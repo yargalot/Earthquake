@@ -5,20 +5,23 @@
 //-       {{key}}
 //-       .badge {{value}}
 
+ui-gmap-google-map(center="map.center", zoom="map.zoom", ng-if="showMap")
+  ui-gmap-marker(coords="marker.coords", options="marker.options", idkey="marker.id")
 
-h1 {{earthquake.region}}
-p.byline {{earthquake.timedate}}
+.container
+  h1 {{earthquake.region}}
+  p.byline {{earthquake.timedate}}
 
-dl.list-main-item-body-dl
-  dt Depth
-  dd {{::earthquake.depth}}
-  dt Magnitude
-  dd {{::earthquake.magnitude}}
-  dt Source
-  dd {{::earthquake.magnitude}}
-  dt Latitude
-  dd {{::earthquake.lat}}
-  dt Longitude
-  dd {{::earthquake.lon}}
+  dl.list-main-item-body-dl
+    dt Depth
+    dd {{::earthquake.depth}}
+    dt Magnitude
+    dd {{::earthquake.magnitude}}
+    dt Source
+    dd {{::earthquake.magnitude}}
+    dt Latitude
+    dd {{::earthquake.lat}}
+    dt Longitude
+    dd {{::earthquake.lon}}
 
-{{earthquake}}
+//- {{earthquake}}

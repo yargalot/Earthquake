@@ -9,7 +9,7 @@ html(ng-app='Earthquake')
       .container
         h2: a(href="#/") Earthquakes
 
-    .container(ng-view)
+    .main(ng-view)
       block content
 
     .spinner(ng-if='showLoader')

@@ -2,7 +2,8 @@
 angular.module('Earthquake', [
   'ngRoute',
   'ngAnimate',
-  'Display.services'
+  'Display.services',
+  'google-maps'.ns()
 ])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
