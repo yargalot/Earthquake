@@ -29,33 +29,5 @@ angular.module('Display.services', [])
   displayOptions.resolutionInit();
   window.onresize = windowChange;
 
-  // Chrome Fix for opening in new tabs
-  // if (document.webkitVisibilityState != 'undefined') {
-  //   document.addEventListener('webkitvisibilitychange', windowChange, false);
-  // }
-
-  // Image Server Service
-  displayOptions.imageServerOptions = function(width, height, centered) {
-
-    var imageWidth = width;
-    var imageHeight = height;
-
-    // Add Mobile Max
-    if (displayOptions.tinyResolution && width > displayOptions.tinyScreen) {
-      var ratio = width / 480;
-
-      imageWidth  = 480;
-      imageHeight = height * ratio;
-    }
-
-    var imageServerWidth    = this.pixelRatio ? imageWidth * 2  : imageWidth;
-    var imageServerHeight   = this.pixelRatio ? imageHeight * 2 : imageHeight;
-    var imageServerCentered = centered ? '&aspect=centered' : '&aspect=FitWithinNoPad';
-
-    // &aspect=FitWithinNoPad || &aspect=centered
-
-    return '?width=' + imageServerWidth + '&height=' + imageServerHeight + imageServerCentered;
-  };
-
   return displayOptions;
 }]);

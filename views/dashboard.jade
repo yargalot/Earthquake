@@ -1,8 +1,7 @@
 .row
-  .col-xs-12.col-sm-6.col-md-4(ng-repeat='earthquake in earthquakes')
+  .col-xs-12.col-sm-6.col-md-4(ng-repeat='earthquake in earthquakes',  ng-class="{true:'clear', false:''}[$index % resolutionGrid == 0]")
     .list-main-item
       .list-main-item-header
-
 
       .list-main-item-body
         h4: a {{::earthquake.region}}
@@ -14,6 +13,6 @@
           dt Magnitude
           dd {{::earthquake.magnitude}}
           dt Source
-          dd{{::earthquake.magnitude}}
+          dd {{::earthquake.magnitude}}
 
 //- {{earthquakes}}
