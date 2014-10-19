@@ -1,5 +1,3 @@
-
-
 .row
   .col-sm-3
     .list-header
@@ -15,7 +13,7 @@
           .list-main-item-header
 
           .list-main-item-body
-            h4: a {{::earthquake.region}}
+            h4: a(ng-href='#/earthquake/{{earthquake.eqid}}') {{::earthquake.region}}
             p.byline {{::earthquake.timedate}}
 
             dl.list-main-item-body-dl

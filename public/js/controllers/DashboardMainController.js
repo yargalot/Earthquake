@@ -10,7 +10,6 @@ function DashboardMainController($scope, $http, $interval, earthquakes, resoluti
 
   $http.get('/api/totals').then(
     function success(response) {
-      console.log(response);
 
       $scope.totals = response.data;
 
