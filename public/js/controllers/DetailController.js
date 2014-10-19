@@ -11,20 +11,19 @@ function DetailController($scope, $http, $interval, $location, $timeout, resolut
   $scope.earthquake = earthquake;
 
 
+  var coordinates = {
+    latitude:   earthquake.lat,
+    longitude:  earthquake.lon
+  };
+
   $scope.map = {
-    center: {
-        latitude:   $scope.earthquake.lat,
-        longitude:  $scope.earthquake.lon
-    },
+    center: coordinates,
     zoom: 7
   };
 
   $scope.marker = {
     id: 0,
-    coords: {
-      latitude: $scope.earthquake.lat,
-      longitude: $scope.earthquake.lon
-    },
+    coords: coordinates,
     options: { draggable: false }
   };
 
