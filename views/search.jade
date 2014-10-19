@@ -1,4 +1,5 @@
-h2 {{earthquakeYear}}
+h2(ng-if='!earthquakeMonth') {{earthquakeYear}}
+h2(ng-if="earthquakeMonth") {{earthquakeMonth}}/{{earthquakeYear}}
 
 .row
   .col-sm-3

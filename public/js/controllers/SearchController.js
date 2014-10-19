@@ -6,6 +6,7 @@ function SearchController($scope, $http, $interval, $routeParams, earthquakes, r
 
   $scope.resolutionGrid = resolutionService.largeResolution ? 3 : 2;
   $scope.earthquakeYear = $routeParams.year;
+  $scope.earthquakeMonth = $routeParams.month;
 
   $scope.earthquakes = earthquakes;
 
