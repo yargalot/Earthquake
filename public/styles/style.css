@@ -3060,8 +3060,14 @@ input[type="button"].btn-block {
 }
 .header {
   height: 60px;
-  background: #004165;
   margin-bottom: 20px;
+  padding-top: 14px;
+  background: #004165;
+}
+.header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-weight: normal;
 }
 .list-main-item {
   background: #ffffff;
@@ -3069,8 +3075,8 @@ input[type="button"].btn-block {
   margin-bottom: 10px;
 }
 .list-main-item-header {
-  height: 75px;
-  background: #777777;
+  height: 5px;
+  background: #004165;
 }
 .list-main-item-body {
   padding: 5px 10px;

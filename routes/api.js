@@ -2,10 +2,10 @@ var express = require('express');
 var request = require('request');
 var router = express.Router();
 
-var server = 'http://www.seismi.org/api/eqs';
+var server = 'http://www.seismi.org/api';
 
 router
-  .get('/', function(req, res, next) {
+  .get('/**', function(req, res, next) {
 
       url = server + req.url;
       console.log('GET: ' + url);

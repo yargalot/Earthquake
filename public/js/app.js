@@ -14,7 +14,7 @@ angular.module('Earthquake', [
     controller: DashboardMainController,
     resolve: {
       earthquakes: function($http) {
-        return $http.get('/api').then(
+        return $http.get('/api/eqs').then(
           function success(response) {
             return response.data.earthquakes;
           },
