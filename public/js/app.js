@@ -77,4 +77,30 @@ angular.module('Earthquake', [
   //   requireBase: false
   // });
 
+}])
+
+.controller('MainController', function($scope, $http, $interval, $rootScope) {
+
+  $rootScope.$watch('showLoader', function(newVal, oldVal) {
+    if (newVal !== undefined) {
+        $scope.showLoader = newVal;
+    }
+  });
+
+ })
+
+.run(['$rootScope', function($rootScope) {
+
+  console.log('test');
+
+  $rootScope.$on("$routeChangeStart", function (event, next, current) {
+    console.log('Start');
+    $rootScope.showLoader = true;
+  });
+
+  $rootScope.$on("$routeChangeSuccess", function (event, next, current) {
+    console.log('End');
+    $rootScope.showLoader = false;
+  });
+
 }]);

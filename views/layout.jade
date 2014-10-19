@@ -1,9 +1,9 @@
 doctype html
-html
+html(ng-app='Earthquake')
   head
     title ANZ earthquakes
     link(rel='stylesheet', href='/styles/style.css')
-  body(ng-app='Earthquake')
+  body(ng-controller="MainController")
 
     header.header
       .container
@@ -11,5 +11,10 @@ html
 
     .container(ng-view)
       block content
+
+    .spinner(ng-if='showLoader')
+      .bounce1
+      .bounce2
+      .bounce3
 
     include partials/scripts
