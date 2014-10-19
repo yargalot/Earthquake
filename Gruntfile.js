@@ -25,7 +25,7 @@ module.exports = function(grunt) {
           paths: ["bower_components/bootstrap/less"]
         },
         files: {
-          "public/stylesheets/style.css": "source/less/style.less"
+          "public/styles/style.css": "source/less/style.less"
         }
       }
     },
@@ -53,6 +53,7 @@ module.exports = function(grunt) {
       },
       less: {
         options: {
+          livereload: false,
           interrupt: true,
         },
         files: 'source/less/**/*.less',
@@ -60,6 +61,9 @@ module.exports = function(grunt) {
       },
       jade: {
         files: 'views/**/*.jade'
+      },
+      css: {
+        files: ['public/styles/**/*.css']
       },
       scripts: {
         files: ['public/js/**/*.js'],

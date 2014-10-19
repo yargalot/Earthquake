@@ -1,8 +1,19 @@
-h1 Dashboard
+.row
+  .col-xs-12.col-sm-6.col-md-4(ng-repeat='earthquake in earthquakes')
+    .list-main-item
+      .list-main-item-header
 
-ul
-  li(ng-repeat='earthquake in earthquakes')
-    strong {{earthquake.region}}
-    | &nbsp;{{earthquake.timedate}}
+
+      .list-main-item-body
+        h4: a {{earthquake.region}}
+        p.byline {{earthquake.timedate}}
+
+        dl.list-main-item-body-dl.dl-horizontal
+          dt Depth
+          dd {{earthquake.depth}}
+          dt Magnitude
+          dd {{earthquake.magnitude}}
+          dt Source
+          dd{{earthquake.magnitude}}
 
 //- {{earthquakes}}

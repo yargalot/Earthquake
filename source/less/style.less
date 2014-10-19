@@ -5,4 +5,66 @@
 
 
 // Import Bootstrap
-@import 'bootstrap.less';
+@import "variables-anz.less";
+@import "mixins.less";
+
+// Reset and dependencies
+@import "normalize.less";
+@import "print.less";
+@import "glyphicons.less";
+
+// Core CSS
+@import "scaffolding.less";
+@import "type.less";
+@import "code.less";
+@import "grid.less";
+@import "tables.less";
+@import "forms.less";
+@import "buttons.less";
+
+
+@brand-anz-blue: #004165;
+
+.header {
+  height:60px;
+  background: @brand-anz-blue;
+  margin-bottom:20px;
+}
+
+
+.list-main:extend(.list-unstyled) {}
+
+.list-main-item {
+  background:@white;
+  border: solid 1px darken(@gray-lighter, 2%);
+  margin-bottom:10px;
+}
+
+.list-main-item-header {
+  height:75px;
+  background:@gray-light;
+}
+
+.list-main-item-body {
+  padding:5px 10px;
+}
+
+.list-main-item-body-dl {
+
+  @dt-width: 80px;
+
+  dt {
+    text-align:left;
+
+    width:@dt-width;
+  }
+
+  dd {
+    margin-left:@dt-width + 20px;
+  }
+
+}
+
+.byline {
+  color:@gray-light;
+}
