@@ -4,9 +4,8 @@ function DetailController($scope, $http, $interval, $location, $timeout, resolut
 
   if (!earthquake) {
     $location.path('/');
+    return;
   }
-
-  console.log(earthquake);
 
   $scope.earthquake = earthquake;
 
