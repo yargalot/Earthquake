@@ -2,7 +2,7 @@
   .list-main-item-header
 
   .list-main-item-body
-    h4: a(ng-href='#/earthquake/{{earthquake.eqid}}') {{::earthquake.region}}
+    h4: a(ng-click='viewEarthquake()',ng-href='#/earthquake/{{earthquake.eqid}}') {{::earthquake.region}}
     p.byline {{::earthquake.timedate}}
 
     dl.list-main-item-body-dl

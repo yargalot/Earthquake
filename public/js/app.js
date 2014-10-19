@@ -70,8 +70,8 @@ angular.module('Earthquake', [
     templateUrl: '/detail',
     controller: DetailController,
     resolve: {
-      earthquakee: function($http, $route) {
-
+      earthquake: function($rootScope) {
+        return $rootScope.whatEarthquake;
       }
     }
   })
@@ -94,6 +94,12 @@ angular.module('Earthquake', [
     }
   });
 
+
+  $scope.viewEarthquake = function() {
+
+      $rootScope.whatEarthquake = this.earthquake;
+  };
+
  })
 
 .run(['$rootScope', function($rootScope) {
@@ -101,12 +107,10 @@ angular.module('Earthquake', [
   console.log('test');
 
   $rootScope.$on("$routeChangeStart", function (event, next, current) {
-    console.log('Start');
     $rootScope.showLoader = true;
   });
 
   $rootScope.$on("$routeChangeSuccess", function (event, next, current) {
-    console.log('End');
     $rootScope.showLoader = false;
   });
 

@@ -6,4 +6,19 @@
 //-       .badge {{value}}
 
 
-h1 Detail
+h1 {{earthquake.region}}
+p.byline {{earthquake.timedate}}
+
+dl.list-main-item-body-dl
+  dt Depth
+  dd {{::earthquake.depth}}
+  dt Magnitude
+  dd {{::earthquake.magnitude}}
+  dt Source
+  dd {{::earthquake.magnitude}}
+  dt Latitude
+  dd {{::earthquake.lat}}
+  dt Longitude
+  dd {{::earthquake.lon}}
+
+{{earthquake}}

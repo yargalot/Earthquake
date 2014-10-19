@@ -12,8 +12,6 @@ function SearchController($scope, $http, $interval, earthquakes, resolutionServi
     function success(response) {
       console.log(response);
 
-
-
       $scope.totals = response.data;
 
     },
