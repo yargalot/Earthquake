@@ -1,4 +1,4 @@
-//- 
+//-
 //- .list-header
 //-   .list-group
 //-     a.list-group-item(ng-href='#/search/{{key}}', ng-repeat='(key, value) in totals')
@@ -7,19 +7,6 @@
 
 .row
   .col-xs-12.col-sm-6.col-md-4(ng-repeat='earthquake in earthquakes',  ng-class="{true:'clear', false:''}[$index % resolutionGrid == 0]")
-    .list-main-item
-      .list-main-item-header
-
-      .list-main-item-body
-        h4: a {{::earthquake.region}}
-        p.byline {{::earthquake.timedate}}
-
-        dl.list-main-item-body-dl
-          dt Depth
-          dd {{::earthquake.depth}}
-          dt Magnitude
-          dd {{::earthquake.magnitude}}
-          dt Source
-          dd {{::earthquake.magnitude}}
-
+    include partials/list-item
+    
 //- {{earthquakes}}

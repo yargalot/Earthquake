@@ -66,20 +66,27 @@ angular.module('Earthquake', [
     }
   })
 
+  .when('/earthquake/:uid', {
+    templateUrl: '/detail',
+    controller: DetailController,
+    resolve: {
+      earthquakee: function($http, $route) {
+
+      }
+    }
+  })
+
   // Otherwise redirect to
   .otherwise({
     redirectTo: '/'
   });
 
 
-  // $locationProvider.html5Mode({
-  //   enabled: true,
-  //   requireBase: false
-  // });
-
 }])
 
 .controller('MainController', function($scope, $http, $interval, $rootScope) {
+
+  $scope.viewEarthQuake = false;
 
   $rootScope.$watch('showLoader', function(newVal, oldVal) {
     if (newVal !== undefined) {
