@@ -47,19 +47,28 @@
 
 .list-main-item-body {
   padding:5px 10px;
+
+  h4 {
+    margin-bottom:0;
+  }
 }
 
 .list-main-item-body-dl {
 
   @dt-width: 80px;
 
-  dt {
-    text-align:left;
+  color:@gray;
 
-    width:@dt-width;
+  dt {
+    float: left;
+    width: @dt-width;
+    clear: left;
+    text-align: left;
+    .text-overflow();
   }
 
   dd {
+    &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
     margin-left:@dt-width + 20px;
   }
 

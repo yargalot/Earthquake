@@ -1,7 +1,8 @@
 // Declare app level module which depends on filters, and services
 angular.module('Earthquake', [
   'ngRoute',
-  'ngAnimate'
+  'ngAnimate',
+  'Display.services'
 ])
 .config(['$routeProvider', function($routeProvider) {
 

@@ -3075,9 +3075,20 @@ input[type="button"].btn-block {
 .list-main-item-body {
   padding: 5px 10px;
 }
+.list-main-item-body h4 {
+  margin-bottom: 0;
+}
+.list-main-item-body-dl {
+  color: #555555;
+}
 .list-main-item-body-dl dt {
-  text-align: left;
+  float: left;
   width: 80px;
+  clear: left;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .list-main-item-body-dl dd {
   margin-left: 100px;

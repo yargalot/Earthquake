@@ -5,15 +5,15 @@
 
 
       .list-main-item-body
-        h4: a {{earthquake.region}}
-        p.byline {{earthquake.timedate}}
+        h4: a {{::earthquake.region}}
+        p.byline {{::earthquake.timedate}}
 
-        dl.list-main-item-body-dl.dl-horizontal
+        dl.list-main-item-body-dl
           dt Depth
-          dd {{earthquake.depth}}
+          dd {{::earthquake.depth}}
           dt Magnitude
-          dd {{earthquake.magnitude}}
+          dd {{::earthquake.magnitude}}
           dt Source
-          dd{{earthquake.magnitude}}
+          dd{{::earthquake.magnitude}}
 
 //- {{earthquakes}}
