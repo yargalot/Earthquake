@@ -1,6 +1,6 @@
-DashboardMainController.$inject = ['$scope', '$http', '$interval', 'earthquakes', 'ResolutionService'];
+SearchController.$inject = ['$scope', '$http', '$interval', 'earthquakes', 'ResolutionService'];
 
-function DashboardMainController($scope, $http, $interval, earthquakes, resolutionService) {
+function SearchController($scope, $http, $interval, earthquakes, resolutionService) {
 
   console.log(resolutionService);
 
@@ -11,6 +11,8 @@ function DashboardMainController($scope, $http, $interval, earthquakes, resoluti
   $http.get('/api/totals').then(
     function success(response) {
       console.log(response);
+
+
 
       $scope.totals = response.data;
 

@@ -4,7 +4,7 @@ angular.module('Earthquake', [
   'ngAnimate',
   'Display.services'
 ])
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
   $routeProvider
 
@@ -25,10 +25,56 @@ angular.module('Earthquake', [
       }
     }
   })
+  .when('/search/:year', {
+    templateUrl: '/search',
+    controller: SearchController,
+    resolve: {
+      earthquakes: function($http, $route) {
+
+        var year = $route.current.params.year;
+
+        return $http.get('/api/eqs/' + year).then(
+          function success(response) {
+            return response.data.earthquakes;
+          },
+          function error(reason) {
+            return false;
+          }
+        );
+      }
+    }
+  })
+
+  .when('/search/:year/:month', {
+    templateUrl: '/search',
+    controller: SearchController,
+    resolve: {
+      earthquakes: function($http, $route) {
+
+        var year  = $route.current.params.year;
+        var month = $route.current.params.month;
+
+        return $http.get('/api/eqs/' + year + '/' + month).then(
+          function success(response) {
+            return response.data.earthquakes;
+          },
+          function error(reason) {
+            return false;
+          }
+        );
+      }
+    }
+  })
 
   // Otherwise redirect to
   .otherwise({
     redirectTo: '/'
   });
+
+
+  // $locationProvider.html5Mode({
+  //   enabled: true,
+  //   requireBase: false
+  // });
 
 }]);

@@ -1,18 +1,29 @@
+
+
 .row
-  .col-xs-12.col-sm-6.col-md-4(ng-repeat='earthquake in earthquakes',  ng-class="{true:'clear', false:''}[$index % resolutionGrid == 0]")
-    .list-main-item
-      .list-main-item-header
+  .col-sm-3
+    .list-header
+      .list-group
+        a.list-group-item(ng-href='#/search/{{key.replace(".", "/")}}', ng-repeat='(key, value) in totals')
+          {{::key.replace(".", "/")}}
+          .badge {{::value}}
 
-      .list-main-item-body
-        h4: a {{::earthquake.region}}
-        p.byline {{::earthquake.timedate}}
+  .col-xs-12.col-sm-9
+    .row
+      .col-xs-12.col-sm-6.col-md-4(ng-repeat='earthquake in earthquakes',  ng-class="{true:'clear', false:''}[$index % resolutionGrid == 0]")
+        .list-main-item
+          .list-main-item-header
 
-        dl.list-main-item-body-dl
-          dt Depth
-          dd {{::earthquake.depth}}
-          dt Magnitude
-          dd {{::earthquake.magnitude}}
-          dt Source
-          dd {{::earthquake.magnitude}}
+          .list-main-item-body
+            h4: a {{::earthquake.region}}
+            p.byline {{::earthquake.timedate}}
+
+            dl.list-main-item-body-dl
+              dt Depth
+              dd {{::earthquake.depth}}
+              dt Magnitude
+              dd {{::earthquake.magnitude}}
+              dt Source
+              dd {{::earthquake.magnitude}}
 
 //- {{earthquakes}}

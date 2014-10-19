@@ -12,4 +12,10 @@ router.get('/dashboard', function(req, res) {
 });
 
 
+/* GET home page. */
+router.get('/search', function(req, res) {
+  res.render('search.jade', { title: 'Express' });
+});
+
+
 module.exports = router;
