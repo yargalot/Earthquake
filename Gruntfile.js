@@ -18,6 +18,14 @@ module.exports = function(grunt) {
     },
 
 
+    // Run bower install
+    bower: {
+      install: {
+       //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+     }
+   },
+
+
     // Less file compilation
     less: {
       development: {
@@ -83,6 +91,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['less', 'develop', 'open', 'watch']);
-  grunt.registerTask('build',   ['less']);
+  grunt.registerTask('heroku',   ['bower', 'less']);
 
 };
