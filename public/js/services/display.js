@@ -1,5 +1,5 @@
 angular.module('Display.services', [])
-.factory('ResolutionService', ['$window', '$rootScope', function(win, rootScope) {
+.service('ResolutionService', ['$window', '$rootScope', function(win, rootScope) {
 
   // Init Object
   var displayOptions = {};

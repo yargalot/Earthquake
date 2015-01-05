@@ -3,7 +3,7 @@ angular.module('Earthquake', [
   'ngRoute',
   'ngAnimate',
   'Display.services',
-  'google-maps'.ns()
+  'uiGmapgoogle-maps'
 ])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -101,8 +101,7 @@ angular.module('Earthquake', [
       $rootScope.whatEarthquake = this.earthquake;
   };
 
- })
-
+})
 .run(['$rootScope', function($rootScope) {
 
   console.log('test');
